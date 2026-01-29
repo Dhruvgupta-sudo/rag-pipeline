@@ -5,7 +5,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 
 PDF_FOLDER = "C:/c drive/training/rag1/data/pdfs"
-DB_FOLDER = "vectorstore"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_FOLDER = os.path.join(BASE_DIR, "vectorstore")
 
 def main():
     documents = []
