@@ -1,0 +1,190 @@
+:root {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.search-bar button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-bar button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.search-bar button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-indicator {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 2rem 0;
+}
+
+.answer-section {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  /* white-space: pre-wrap; REMOVED to fix double spacing with ReactMarkdown */
+}
+
+.answer-section h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.answer-section.error {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.answer-content {
+  line-height: 1.6;
+}
+
+.answer-content h1, 
+.answer-content h2, 
+.answer-content h3, 
+.answer-content h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.answer-content h1 { font-size: 1.5rem; }
+.answer-content h2 { font-size: 1.3rem; }
+.answer-content h3 { font-size: 1.15rem; }
+
+.answer-content p {
+  margin-bottom: 0.75rem;
+}
+
+/* Fix for spacing inside lists */
+.answer-content li > p {
+  margin: 0;
+}
+
+.answer-content ul, 
+.answer-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.answer-content li {
+  margin-bottom: 0.25rem;
+}
+
+.answer-content strong {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.source-list {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.source-list h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.source-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.source-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.source-item:last-child {
+  border-bottom: none;
+}
+
+.source-file {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.source-page {
+  color: var(--text-muted);
+}
